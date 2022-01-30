@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 
 // parse application/x-www-form-urlencoded
@@ -35,7 +35,7 @@ app.use(express.static(__dirname + "/public"));
 
 //rutas WEB
 app.use('/', require('./router/rutas'));
-app.use('/mascotas', require('./router/mascotas'));
+app.use('/mascotas/', require('./router/mascotas'));
 
 
 app.use((req, res, next) => {
